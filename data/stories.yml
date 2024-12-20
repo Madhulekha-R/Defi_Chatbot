@@ -1,0 +1,120 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: happy
+  steps:
+  - intent: affirm
+  - action: utter_happy
+
+- story: great mood
+  steps:
+  - intent: mood_great
+  - action: utter_mood_great
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: happy
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+  
+- story: gratitude
+  steps:
+  - intent: thanks
+  - action: utter_thanks
+
+- story: documents
+  steps:
+  - intent: document_requirements
+  - action: utter_document_requirements
+
+- story: balance inquiry
+  steps:
+  - intent: minimum_balance_inquiry
+  - action: utter_minimum_balance_inquiry
+
+- story: Inquire about fixed deposit
+  steps:
+  - intent: inquire_fixed_deposit
+  - action: utter_inquire_fixed_deposit
+
+- story: Initiate fund transfer
+  steps:
+  - intent: initiate_fund_transfer
+  - action: utter_initiate_fund_transfer
+
+- story: Inquire about mutual funds
+  steps:
+  - intent: inquire_mutual_funds
+  - action: utter_inquire_mutual_funds
+
+- story: Inquire about home loan
+  steps:
+  - intent: inquire_home_loan
+  - action: utter_inquire_home_loan
+
+- story: Inquire about bill payment
+  steps:
+  - intent: inquire_bill_payment
+  - action: utter_inquire_bill_payment
+
+- story: Inquire about National Pension System
+  steps:
+  - intent: inquire_national_pension_system
+  - action: utter_inquire_national_pension_system
+
+- story: Inquire about gold loan
+  steps:
+  - intent: inquire_gold_loan
+  - action: utter_inquire_gold_loan
+
+- story: Inquire about payday loan
+  steps:
+  - intent: inquire_payday_loan
+  - action: utter_inquire_payday_loan
+
+- story: Inquire about consumer durable loan
+  steps:
+  - intent: inquire_consumer_durable_loan
+  - action: utter_inquire_consumer_durable_loan
+
+- story: Inquire about loan on credit card
+  steps:
+  - intent: inquire_loan_on_credit_card
+  - action: utter_inquire_loan_on_credit_card
+
+- story: Inquire about loan against property
+  steps:
+  - intent: inquire_loan_against_property
+  - action: utter_inquire_loan_against_property
+
+- story: Inquire about business loan
+  steps:
+  - intent: inquire_business_loan
+  - action: utter_inquire_business_loan

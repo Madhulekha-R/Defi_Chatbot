@@ -1,0 +1,211 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: thanks
+  examples: |
+    - Thanks
+    - Thank you
+    - Thanks a lot
+    - Thank you so much
+    - Thanks for your help
+    - Thank you for assisting me
+    - I love you.
+    - I love it thank you so much
+
+- intent: document_requirements
+  examples: |
+    - What documents do I need to open an account?
+    - Can you tell me the required documents for account opening?
+    - What paperwork is required to create an account?
+    - Do I need to provide any documents to open an account
+    - document requirements for account opening
+    - account opening documents
+    
+- intent: minimum_balance_inquiry
+  examples: |
+    - What is the minimum balance required for a savings account?
+    - Can you tell me the minimum balance for a checking account?
+    - What's the minimum amount I need to keep in my account?
+    - Do I need to maintain a minimum balance for this account?
+    - Is there a minimum balance requirement?
+    - minimum balance for account
+    - minimum balance
+    
+- intent: inquire_fixed_deposit
+  examples: |
+    - What are the interest rates for fixed deposits?
+    - Can you tell me about fixed deposit options?
+    - I want to know more about fixed deposits.
+    - fixed deposit interest rate
+    - fixed deposit
+    
+- intent: initiate_fund_transfer
+  examples: |
+    - How can I transfer funds between accounts?
+    - Can I transfer money to another bank account?
+    - I need to initiate a fund transfer.
+    - how can i transfer money from one account to another?
+    - can i transfer fund to another account?
+    - money transfer from one account to another
+    
+- intent: inquire_mutual_funds
+  examples: |
+    - What are the best mutual fund options?
+    - Can you provide information about mutual funds?
+    - I'm interested in investing in mutual funds.
+    - mutual fund
+
+- intent: inquire_home_loan
+  examples: |
+    - What are the eligibility criteria for a home loan?
+    - Can you tell me about the interest rates for home loans?
+    - I want to apply for a home loan.
+    - home loan
+
+- intent: inquire_bill_payment
+  examples: |
+    - How can I pay my bills online?
+    - Can you assist me with bill payment?
+    - I need to pay my utility bills.
+    - bill payment
+
+- intent: inquire_national_pension_system
+  examples: |
+    - What is the National Pension System (NPS)?
+    - Can you provide details about NPS?
+    - How can I enroll in the NPS?
+    - national pension system
+    - national pension
+    - NPS
+    - nps
+
+- intent: inquire_gold_loan
+  examples: |
+    - Can I get a loan against gold?
+    - What are the terms for a gold loan?
+    - Tell me more about gold loan options.
+    - gold loan
+    
+- intent: inquire_payday_loan
+  examples: |
+    - What is a payday loan?
+    - Can I get a payday loan from your bank?
+    - Tell me about the payday loan process.
+    - payday loan
+
+- intent: inquire_consumer_durable_loan
+  examples: |
+    - Do you offer loans for consumer durables?
+    - Can I finance my electronics purchase with a loan?
+    - Tell me about consumer durable loan options.
+    - consumer durables
+
+- intent: inquire_loan_on_credit_card
+  examples: |
+    - How can I get a loan on my credit card?
+    - Can you explain the credit card loan process?
+    - What are the benefits of a loan on a credit card?
+    - credit card loan
+
+- intent: inquire_loan_against_property
+  examples: |
+    - Can I get a loan against my property?
+    - What are the requirements for a loan against property?
+    - Tell me about loan against property options.
+    
+- intent: inquire_business_loan
+  examples: |
+    - How can I apply for a business loan?
+    - Do you offer loans for small businesses?
+    - Tell me about business loan eligibility criteria.
+    - bussiness loan.
+    - Bussiness Loan

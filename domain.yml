@@ -1,0 +1,131 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - thanks
+  - document_requirements
+  - minimum_balance_inquiry
+  - inquire_fixed_deposit
+  - initiate_fund_transfer
+  - inquire_mutual_funds
+  - inquire_home_loan
+  - inquire_bill_payment
+  - inquire_national_pension_system
+  - inquire_gold_loan
+  - inquire_payday_loan
+  - inquire_consumer_durable_loan
+  - inquire_loan_on_credit_card
+  - inquire_loan_against_property
+  - inquire_business_loan
+
+actions:
+  - action_default_fallback
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+  - text: "good morning!"
+
+  utter_mood_great:
+  - text: "You're welcome! If you need further assistance, feel free to ask. I'm here to help"
+
+  utter_sorry:
+  - text: "sorry for inconvenience,please let me know if you need any help."
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_thanks:
+  - text: "I'm glad to hear that! If you have any questions or need assistance, feel free to ask. I'm here to help!"
+
+  utter_document_requirements:
+  - text: "To open a bank account, you typically need to provide the following documents:
+  \n1. Proof of identification (e.g., passport, driver's license, or government-issued ID).
+  \n2. Proof of address (e.g., utility bill, rental agreement, or bank statement).
+  \n3. Additional documents may be required based on the type of account you're opening
+  and the bank's policies.
+  \nPlease ensure that you bring original documents as photocopies may not be accepted."
+
+  utter_minimum_balance_inquiry:
+  - text: " there are no minimum balance requirements for any account. However, please note that if your account remains
+  empty for more than 6 months, it may be subject to locking for security purposes. We recommend ensuring some activity
+  within your account to prevent any inconvenience."
+
+  utter_inquire_fixed_deposit:
+  - text: "Our bank offers competitive interest rates for fixed deposits. Would you like to know more details?"
+
+  utter_initiate_fund_transfer:
+  - text: "To initiate a fund transfer, you can use our online banking portal or mobile app. It's fast and convenient!"
+
+  utter_inquire_mutual_funds:
+  - text: "We offer a variety of mutual fund options tailored to your investment needs. How much are you looking to
+   invest?"
+
+  utter_inquire_home_loan:
+  - text: "Interested in a home loan? Our bank provides flexible home loan options with attractive interest rates. 
+  Let's discuss your requirements."
+
+  utter_inquire_bill_payment:
+  - text: "Paying bills is hassle-free with our online banking services. You can easily pay your utility bills,
+   credit card bills, and more."
+
+  utter_inquire_national_pension_system:
+  - text: "The National Pension System (NPS) is a voluntary, long-term retirement savings scheme. 
+  Learn about its benefits and how to enroll."
+
+  utter_inquire_gold_loan:
+  - text: "Need quick funds? Consider our gold loan options, where you can pledge your gold ornaments to meet your
+   financial needs."
+
+  utter_inquire_payday_loan:
+  - text: "Facing a short-term financial crunch? Our payday loan offers quick access to funds to cover your 
+  immediate expenses."
+
+  utter_inquire_consumer_durable_loan:
+  - text: "Planning to buy consumer durables? Avail our consumer durable loan with easy repayment options and
+   minimal documentation."
+
+  utter_inquire_loan_on_credit_card:
+  - text: "Get instant funds with our loan against credit card feature. Convert your credit limit into cash 
+  and fulfill your financial needs."
+
+  utter_inquire_loan_against_property:
+  - text: "Unlock the value of your property with our loan against property. Use the funds for business 
+  expansion, education, or any other purpose."
+
+  utter_inquire_business_loan:
+  - text: "Expand your business horizons with our business loan solutions. Explore our customized loan 
+  options and fuel your growth."
+
+  utter_please_rephrase:
+  - text: "I'm sorry, I didn't quite understand that. Could you rephrase?"
+
+templates:
+  utter_default:
+  - text: "I'm sorry, I didn't understand that. Can you please rephrase?"
+
+  my_custom_fallback_template:
+  - text: "I'm sorry, I couldn't understand that. Can you please provide more information?"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
