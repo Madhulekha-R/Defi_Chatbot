@@ -7,7 +7,6 @@ html, body {
     flex-direction: column;
 }
 
-/* Chat Header */
 .chat-header {
     background-color: #4f4f4f;
     color: white;
@@ -22,7 +21,6 @@ html, body {
     margin: 0;
 }
 
-/* Chat Container */
 .chat-container {
     flex: 1;
     display: flex;
@@ -36,8 +34,6 @@ html, body {
     height: calc(100vh - 130px);
 }
 
-/* Chat Box */
-/* Chat Box */
 .chat-box {
     flex: 1;
     display: flex;
@@ -49,10 +45,9 @@ html, body {
     margin: 10px;
     border-radius: 10px;
     box-sizing: border-box;
-    margin-bottom: 80px; /* Ensure it doesn’t get covered by input bar */
+    margin-bottom: 80px; 
 }
 
-/* Message Input */
 .message-input {
     display: flex;
     padding: 15px;
@@ -62,11 +57,9 @@ html, body {
     bottom: 0;
     width: 100%;
     box-sizing: border-box;
-    z-index: 10; /* Ensure it stays on top of the messages */
+    z-index: 10; 
 }
 
-
-/* Message Wrapper */
 .message-wrapper {
     display: flex;
     align-items: flex-start;
@@ -81,7 +74,6 @@ html, body {
     justify-content: flex-start;
 }
 
-/* Chat Icon */
 .chat-icon {
     width: 40px;
     height: 40px;
@@ -104,7 +96,6 @@ html, body {
     color: white;
 }
 
-/* Chat Bubbles */
 .chat-bubble {
     padding: 15px;
     border-radius: 20px;
@@ -123,17 +114,6 @@ html, body {
     color: black;
     border-radius: 20px 20px 20px 0;
 }
-
-/* .message-input {
-    display: flex;
-    padding: 15px;
-    border-top: 1px solid #ddd;
-    background-color: #f1f1f1;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    box-sizing: border-box;
-} */
 
 .input-field {
     flex: 1;
