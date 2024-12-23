@@ -1,212 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-
+    <link rel="stylesheet" href="styles.css">
     <title>Socket.IO Chat - Defi Chatbot</title>
-
-    <style>
-        html, body, div, span, applet, object, iframe,
-        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-        a, abbr, acronym, address, big, cite, code,
-        del, dfn, em, img, ins, kbd, q, s, samp,
-        small, strike, strong, sub, sup, tt, var,
-        b, u, i, center,
-        dl, dt, dd, ol, ul, li,
-        fieldset, form, label, legend,
-        table, caption, tbody, tfoot, thead, tr, th, td,
-        article, aside, canvas, details, embed,
-        figure, figcaption, footer, header, hgroup,
-        menu, nav, output, ruby, section, summary,
-        time, mark, audio, video {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            font: inherit;
-            vertical-align: baseline;
-        }
-
-        article, aside, details, figcaption, figure,
-        footer, header, hgroup, menu, nav, section {
-            display: block;
-        }
-
-        body {
-            line-height: 1;
-            font-family: Roboto, sans-serif;
-            background-color: #f3f4fb; 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            height: 100vh;
-        }
-
-        .header {
-            background-color: #000099;
-            color: #ffffff;
-            text-align: center;
-            padding: 12px;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 999;
-        }
-
-        .title {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        #messages {
-            display: flex;
-            flex-direction: column;
-            width: 80%;
-            max-width: 600px;
-            margin-top: 60px; 
-            margin-bottom: 80px; 
-            padding: 10px;
-            overflow-y: auto;
-            height: calc(100vh - 140px); 
-        }
-
-        .message {
-            padding: 0.5rem 1rem;
-            margin-bottom: 10px;
-            border-radius: 10px;
-            max-width: 80%;
-            word-wrap: break-word;
-        }
-
-        .message_sent {
-            background-color: #000099;
-            color: white;
-            align-self: flex-end;
-            border-bottom-right-radius: 0;
-        }
-
-        .message_received {
-            background-color: #DCDCDC;
-            color: black;
-            align-self: flex-start;
-            border-bottom-left-radius: 0;
-            position: relative;
-        }
-
-        .message_received::before {
-            content: '\2605'; 
-            position: absolute;
-            top: 50%;
-            left: -25px; 
-            transform: translateY(-50%);
-            font-size: 16px;
-            color: orange;
-        }
-
-        #form {
-            position: fixed;
-            bottom: 0;
-            width: 80%;
-            max-width: 600px;
-            display: flex;
-            background: white;
-            padding: 10px;
-            box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        #message-input {
-            flex-grow: 1;
-            font-size: 16px;
-            border-radius: 20px;
-            border: 1px solid #ccc;
-            padding: 10px 15px;
-            margin-right: 10px;
-        }
-
-        #message-input:focus {
-            outline: none;
-        }
-
-        .button {
-            background-color: #000099;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-        }
-
-        .button:hover {
-            background-color: #5d2db0;
-        }
-    </style>
 </head>
-
 <body>
-    <header class="header">
-        <p class="title">Defi Chatbot</p>
+    <header class="chat-header">
+        <p class="chat-title">Defi Chatbot</p>
     </header>
-    <div id="messages"></div>
-    <form id="form">
-        <input id="message-input" placeholder="Type your message..." />
-        <button class="button" type="submit">Send</button>
+
+    <div id="messages" class="chat-box"></div>
+
+    <form id="form" class="message-input">
+        <input id="message-input" class="input-field" placeholder="Type your message..." />
+        <button class="send-button" type="submit">Send</button>
     </form>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js"
-        integrity="sha512-PU5S6BA03fRv1Q5fpwXjg5nlRrgdoguZ74urFInkbABMCENyx5oP3hrDzYMMPh3qdLdknIvrGj3yqZ4JuU7Nag=="
-        crossorigin="anonymous">
-    </script>
-
-    <script>
-        
-        const socket = io("http://localhost:5005");
-
-        const messages = document.getElementById("messages");
-        const form = document.getElementById("form");
-        const messageInput = document.getElementById("message-input");
-
-        function appendMessage(msg, type) {
-            const div = document.createElement("div");
-            div.classList.add("message", `message_${type}`);
-            div.textContent = msg;
-            messages.appendChild(div);
-            messages.scrollTop = messages.scrollHeight; 
-        }
-
-        window.onload = function () {
-            appendMessage("Hello! I am Nova, a virtual assistant. How can I help you?", "received");
-        };
-
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
-            const msg = messageInput.value.trim();
-            if (!msg) return;
-
-            appendMessage(msg, "sent");
-            messageInput.value = "";
-
-            socket.emit("user_uttered", { message: msg });
-        });
-
-        socket.on("bot_uttered", function (response) {
-            if (response.text) {
-                appendMessage(response.text, "received");
-            }
-        });
-
-        socket.on("connect", function () {
-            console.log("Connected to the server");
-        });
-
-        socket.on("connect_error", function (err) {
-            console.error("Connection error:", err);
-        });
-    </script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js"></script>
+    <script src="chat.js"></script>
 </body>
-
 </html>
